@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
+import {Link} from 'react-router-dom';
 
 function PokemonCard({ url, name }) {
   const [pokemon, setPokemon] = useState(null);
@@ -25,7 +26,9 @@ function PokemonCard({ url, name }) {
         src={pokemon?.sprites.front_default}
       />
       <Card.Body>
+        <Link to={`/${name}`}>
         <Card.Title>{name}</Card.Title>
+        </Link>
         <Card.Text as='div'>
           Abilities:
           <ul>
